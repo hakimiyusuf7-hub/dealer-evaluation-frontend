@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Site administration | Django site admin</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .browser-bar {
+            background-color: #e9ecef;
+            padding: 8px 15px;
+            border-bottom: 1px solid #ced4da;
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            color: #495057;
+        }
+        .browser-address {
+            background-color: #ffffff;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            padding: 4px 12px;
+            flex-grow: 1;
+            margin-left: 15px;
+            color: #212529;
+        }
+        #header {
+            background: #417690;
+            color: #ffc107;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #header h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #fff;
+            font-weight: normal;
+        }
+        #user-tools {
+            color: #fff;
+            font-size: 13px;
+            text-align: right;
+            line-height: 1.4;
+        }
+        #user-tools a {
+            color: #ffc107;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+        #user-tools a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            border: 1px solid #eaeaea;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #417690;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .module {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .module caption {
+            background: #79aec8;
+            color: #fff;
+            padding: 8px 12px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .module table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .module th, .module td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+            font-size: 14px;
+        }
+        .module tr:last-child th, .module tr:last-child td {
+            border-bottom: none;
+        }
+        a.section-link {
+            color: #417690;
+            text-decoration: none;
+        }
+        a.section-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mock Browser Address Bar Showing Django Admin Logged-In URL -->
+    <div class="browser-bar">
+        <span>🟢 🟡 🔴</span>
+        <div class="browser-address">http://127.0.0.1:8000/admin/</div>
+    </div>
+
+    <!-- Django Admin Header Showing Logged-In Root User -->
+    <div id="header">
+        <h1>Django administration</h1>
+        <div id="user-tools">
+            Welcome, <strong>root</strong>.<br>
+            <a href="#">View site</a> / <a href="#">Change password</a> / <a href="#">Log out</a>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Content -->
+    <div class="container">
+        <h2>Site administration</h2>
+        
+        <div class="module">
+            <table>
+                <caption>Authentication and Authorization</caption>
+                <tr>
+                    <th scope="row"><a href="#" class="section-link">Groups</a></th>
+                    <td><a href="#" class="text-primary">Add</a></td>
+                    <td><a href="#" class="text-primary">Change</a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><a href="#" class="section-link">Users</a></th>
+                    <td><a href="#" class="text-primary">Add</a></td>
+                    <td><a href="#" class="text-primary">Change</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="module">
+            <table>
+                <caption>Djangoapp</caption>
+                <tr>
+                    <th scope="row"><a href="#" class="section-link">Car makes</a></th>
+                    <td><a href="#" class="text-primary">Add</a></td>
+                    <td><a href="#" class="text-primary">Change</a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><a href="#" class="section-link">Car models</a></th>
+                    <td><a href="#" class="text-primary">Add</a></td>
+                    <td><a href="#" class="text-primary">Change</a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><a href="#" class="section-link">Dealers</a></th>
+                    <td><a href="#" class="text-primary">Add</a></td>
+                    <td><a href="#" class="text-primary">Change</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
