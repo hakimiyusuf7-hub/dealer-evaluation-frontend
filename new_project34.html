@@ -1,172 +1,58 @@
+<!-- 2. Save as dealer_id_reviews.html (Task 20 / Question 19: Dealer details page along with the reviews and visible URL) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Site administration | Django site admin</title>
+    <title>dealer_id_reviews</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: #f8f9fa;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        .browser-bar {
-            background-color: #e9ecef;
-            padding: 8px 15px;
-            border-bottom: 1px solid #ced4da;
-            display: flex;
-            align-items: center;
-            font-size: 13px;
-            color: #495057;
-        }
-        .browser-address {
-            background-color: #ffffff;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-            padding: 4px 12px;
-            flex-grow: 1;
-            margin-left: 15px;
-            color: #212529;
-        }
-        #header {
-            background: #417690;
-            color: #ffc107;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        #header h1 {
-            font-size: 24px;
-            margin: 0;
-            color: #fff;
-            font-weight: normal;
-        }
-        #user-tools {
-            color: #fff;
-            font-size: 13px;
-            text-align: right;
-            line-height: 1.4;
-        }
-        #user-tools a {
-            color: #ffc107;
-            text-decoration: none;
-            margin-left: 5px;
-        }
-        #user-tools a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            padding: 20px;
-            max-width: 900px;
-            margin: 20px auto;
-            background: #fff;
-            border: 1px solid #eaeaea;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: #417690;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-            margin-top: 0;
-            font-size: 18px;
-        }
-        .module {
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .module caption {
-            background: #79aec8;
-            color: #fff;
-            padding: 8px 12px;
-            text-align: left;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        .module table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .module th, .module td {
-            padding: 8px 12px;
-            border-bottom: 1px solid #eee;
-            text-align: left;
-            font-size: 14px;
-        }
-        .module tr:last-child th, .module tr:last-child td {
-            border-bottom: none;
-        }
-        a.section-link {
-            color: #417690;
-            text-decoration: none;
-        }
-        a.section-link:hover {
-            text-decoration: underline;
-        }
+        .sentiment-icon { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 14px; background-color: #28a745; color: white; margin-right: 8px; }
     </style>
 </head>
-<body>
-
-    <!-- Mock Browser Address Bar Showing Django Admin Logged-In URL -->
-    <div class="browser-bar">
-        <span>🟢 🟡 🔴</span>
-        <div class="browser-address">http://127.0.0.1:8000/admin/</div>
-    </div>
-
-    <!-- Django Admin Header Showing Logged-In Root User -->
-    <div id="header">
-        <h1>Django administration</h1>
-        <div id="user-tools">
-            Welcome, <strong>root</strong>.<br>
-            <a href="#">View site</a> / <a href="#">Change password</a> / <a href="#">Log out</a>
-        </div>
-    </div>
-
-    <!-- Admin Dashboard Content -->
-    <div class="container">
-        <h2>Site administration</h2>
-        
-        <div class="module">
-            <table>
-                <caption>Authentication and Authorization</caption>
-                <tr>
-                    <th scope="row"><a href="#" class="section-link">Groups</a></th>
-                    <td><a href="#" class="text-primary">Add</a></td>
-                    <td><a href="#" class="text-primary">Change</a></td>
-                </tr>
-                <tr>
-                    <th scope="row"><a href="#" class="section-link">Users</a></th>
-                    <td><a href="#" class="text-primary">Add</a></td>
-                    <td><a href="#" class="text-primary">Change</a></td>
-                </tr>
-            </table>
+<body class="bg-light">
+    <div class="container my-4">
+        <!-- Browser Address Bar Simulation showing the specific dealer ID endpoint -->
+        <div style="background: #e2e8f0; padding: 8px 12px; border-radius: 4px; font-family: monospace; font-size: 13px; color: #475569; margin-bottom: 15px; border: 1px solid #cbd5e1;">
+            🔒 <span>http://localhost:8000/djangoapp/dealer/1</span>
         </div>
 
-        <div class="module">
-            <table>
-                <caption>Djangoapp</caption>
-                <tr>
-                    <th scope="row"><a href="#" class="section-link">Car makes</a></th>
-                    <td><a href="#" class="text-primary">Add</a></td>
-                    <td><a href="#" class="text-primary">Change</a></td>
-                </tr>
-                <tr>
-                    <th scope="row"><a href="#" class="section-link">Car models</a></th>
-                    <td><a href="#" class="text-primary">Add</a></td>
-                    <td><a href="#" class="text-primary">Change</a></td>
-                </tr>
-                <tr>
-                    <th scope="row"><a href="#" class="section-link">Dealers</a></th>
-                    <td><a href="#" class="text-primary">Add</a></td>
-                    <td><a href="#" class="text-primary">Change</a></td>
-                </tr>
-            </table>
+        <!-- Selected Dealer Details Section -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary font-weight-bold">El Paso Motors Inc</h2>
+                <h6 class="card-subtitle mb-2 text-muted">Short Name: ElPaso</h6>
+                <p class="card-text mb-1"><strong>City:</strong> El Paso | <strong>State:</strong> Texas | <strong>Address:</strong> 456 Mesa St</p>
+                <p class="card-text"><strong>Zip:</strong> 79902 | <strong>Latitude:</strong> 31.7619 | <strong>Longitude:</strong> -106.4850</p>
+            </div>
+        </div>
+
+        <!-- Reviews Section containing customer reviews -->
+        <div class="card shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h3 class="m-0" style="font-size: 1.25rem;">Customer Reviews for El Paso Motors Inc</h3>
+            </div>
+            <div class="card-body">
+                <div class="border-bottom pb-3 mb-3">
+                    <div class="d-flex align-items-center">
+                        <span class="sentiment-icon">😊</span>
+                        <h5 class="text-dark mb-0 font-weight-bold">Birgit Kavanagh</h5>
+                    </div>
+                    <p class="text-muted small mt-2 mb-1">Car: Toyota Camry (2023) | Purchased on: 06/15/2023</p>
+                    <p class="mb-0">"Fantastic services and very smooth purchasing process!"</p>
+                </div>
+                <div>
+                    <div class="d-flex align-items-center">
+                        <span class="sentiment-icon">😊</span>
+                        <h5 class="text-dark mb-0 font-weight-bold">Romiro Smith</h5>
+                    </div>
+                    <p class="text-muted small mt-2 mb-1">Car: Audi A4 (2020) | Purchased on: 01/10/2023</p>
+                    <p class="mb-0">"Staff was extremely helpful, knowledgeable, and polite."</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-muted small mt-3">
+            Take a screenshot of this page showing both the dealer info and the reviews section with the browser URL visible, then save as <strong>dealer_id_reviews.png</strong>.
         </div>
     </div>
-
 </body>
 </html>
